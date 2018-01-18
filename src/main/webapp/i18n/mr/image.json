@@ -1,0 +1,23 @@
+{
+    "knowMyMinisterApp": {
+        "image" : {
+            "home": {
+                "title": "Images",
+                "createLabel": "नवीन Image तयार करा",
+                "createOrEditLabel": "Image तयार किंवा संपादित करा",
+                "search": "Image शोधा"
+            },
+            "created": "Image [identifier: {{ param }}] तयार आहे",
+            "updated": "Image [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "Image [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "Image [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "Image"
+            },
+            "title": "Title",
+            "link": "Link"
+        }
+    }
+}

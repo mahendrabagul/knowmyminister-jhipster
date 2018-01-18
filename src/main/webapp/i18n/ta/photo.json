@@ -1,0 +1,25 @@
+{
+    "knowMyMinisterApp": {
+        "photo" : {
+            "home": {
+                "title": "Photos",
+                "createLabel": "Photo-ஐ உருவாக்கு",
+                "createOrEditLabel": "Photo -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Photo"
+            },
+            "created": "Photo புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Photo மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Photo நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Photo {{ id }}?"
+            },
+            "detail": {
+                "title": "Photo"
+            },
+            "title": "Title",
+            "link": "Link",
+            "minister": "Minister",
+            "politicalParty": "Political Party"
+        }
+    }
+}

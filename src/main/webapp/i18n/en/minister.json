@@ -1,0 +1,36 @@
+{
+    "knowMyMinisterApp": {
+        "minister" : {
+            "home": {
+                "title": "Ministers",
+                "createLabel": "Create a new Minister",
+                "createOrEditLabel": "Create or edit a Minister",
+                "search": "Search for Minister"
+            },
+            "created": "A new Minister is created with identifier {{ param }}",
+            "updated": "A Minister is updated with identifier {{ param }}",
+            "deleted": "A Minister is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Minister {{ id }}?"
+            },
+            "detail": {
+                "title": "Minister"
+            },
+            "personalBackground": "Personal Background",
+            "familyBackground": "Family Background",
+            "interests": "Interests",
+            "ideal": "Ideal",
+            "motto": "Motto",
+            "electionSign": "Election Sign",
+            "party": "Party",
+            "bio": "Bio",
+            "address": "Address",
+            "award": "Award",
+            "photo": "Photo",
+            "workExperince": "Work Experince",
+            "education": "Education",
+            "socialLink": "Social Link",
+            "politicalParty": "Political Party"
+        }
+    }
+}

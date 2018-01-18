@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SocialLink.
+    -->
+    <changeSet id="20180118162647-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="minister_id"
+                                 baseTableName="social_link"
+                                 constraintName="fk_social_link_minister_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="minister"/>
+
+        <addForeignKeyConstraint baseColumnNames="political_party_id"
+                                 baseTableName="social_link"
+                                 constraintName="fk_social_link_political_party_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="political_party"/>
+
+    </changeSet>
+</databaseChangeLog>

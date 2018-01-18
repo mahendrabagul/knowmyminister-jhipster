@@ -1,0 +1,111 @@
+<div>
+    <h2>
+        <span jhiTranslate="knowMyMinisterApp.minister.home.title">Ministers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-minister-knowmyminister" [routerLink]="['/', { outlets: { popup: ['minister-knowmyminister-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="knowMyMinisterApp.minister.home.createLabel">
+            Create new Minister
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'knowMyMinisterApp.minister.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="ministers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="personalBackground"><span jhiTranslate="knowMyMinisterApp.minister.personalBackground">Personal Background</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="familyBackground"><span jhiTranslate="knowMyMinisterApp.minister.familyBackground">Family Background</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="interests"><span jhiTranslate="knowMyMinisterApp.minister.interests">Interests</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ideal"><span jhiTranslate="knowMyMinisterApp.minister.ideal">Ideal</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="motto"><span jhiTranslate="knowMyMinisterApp.minister.motto">Motto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="electionSignId"><span jhiTranslate="knowMyMinisterApp.minister.electionSign">Election Sign</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="partyId"><span jhiTranslate="knowMyMinisterApp.minister.party">Party</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="bioId"><span jhiTranslate="knowMyMinisterApp.minister.bio">Bio</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="politicalPartyId"><span jhiTranslate="knowMyMinisterApp.minister.politicalParty">Political Party</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let minister of ministers ;trackBy: trackId">
+                <td><a [routerLink]="['../minister-knowmyminister', minister.id ]">{{minister.id}}</a></td>
+                <td>{{minister.personalBackground}}</td>
+                <td>{{minister.familyBackground}}</td>
+                <td>{{minister.interests}}</td>
+                <td>{{minister.ideal}}</td>
+                <td>{{minister.motto}}</td>
+                <td>
+                    <div *ngIf="minister.electionSignId">
+                        <a [routerLink]="['../image-knowmyminister', minister.electionSignId  ]" >{{minister.electionSignId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="minister.partyId">
+                        <a [routerLink]="['../political-party-knowmyminister', minister.partyId  ]" >{{minister.partyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="minister.bioId">
+                        <a [routerLink]="['../bio-knowmyminister', minister.bioId  ]" >{{minister.bioId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="minister.politicalPartyId">
+                        <a [routerLink]="['../political-party-knowmyminister', minister.politicalPartyId  ]" >{{minister.politicalPartyId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../minister-knowmyminister', minister.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'minister-knowmyminister/'+ minister.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'minister-knowmyminister/'+ minister.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="ministers && ministers.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity PoliticalParty.
+    -->
+    <changeSet id="20180118162646-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="logo_id"
+                                 baseTableName="political_party"
+                                 constraintName="fk_political_party_logo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="image"/>
+
+        <addForeignKeyConstraint baseColumnNames="president_id"
+                                 baseTableName="political_party"
+                                 constraintName="fk_political_party_president_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="minister"/>
+
+        <addForeignKeyConstraint baseColumnNames="rajyasabha_leader_id"
+                                 baseTableName="political_party"
+                                 constraintName="fk_political_party_rajyasabha_leader_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="minister"/>
+
+        <addForeignKeyConstraint baseColumnNames="loksabha_leader_id"
+                                 baseTableName="political_party"
+                                 constraintName="fk_political_party_loksabha_leader_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="minister"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+{
+    "knowMyMinisterApp": {
+        "minister" : {
+            "home": {
+                "title": "Ministers",
+                "createLabel": "नया Minister बनाएँ",
+                "createOrEditLabel": "Minister बनाएँ या संपादित करें",
+                "search": "Minister खोजें"
+            },
+            "created": "एक नया Minister [identifier: {{ param }}] तैयार है",
+            "updated": "एक Minister [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Minister [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Minister [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Minister"
+            },
+            "personalBackground": "Personal Background",
+            "familyBackground": "Family Background",
+            "interests": "Interests",
+            "ideal": "Ideal",
+            "motto": "Motto",
+            "electionSign": "Election Sign",
+            "party": "Party",
+            "bio": "Bio",
+            "address": "Address",
+            "award": "Award",
+            "photo": "Photo",
+            "workExperince": "Work Experince",
+            "education": "Education",
+            "socialLink": "Social Link",
+            "politicalParty": "Political Party"
+        }
+    }
+}

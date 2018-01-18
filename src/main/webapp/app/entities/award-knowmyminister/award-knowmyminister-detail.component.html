@@ -1,0 +1,44 @@
+
+<div *ngIf="award">
+    <h2><span jhiTranslate="knowMyMinisterApp.award.detail.title">Award</span> {{award.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.award.title">Title</span></dt>
+        <dd>
+            <span>{{award.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.award.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{award.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.award.issuer">Issuer</span></dt>
+        <dd>
+            <span>{{award.issuer}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.award.description">Description</span></dt>
+        <dd>
+            <span>{{award.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.award.minister">Minister</span></dt>
+        <dd>
+            <div *ngIf="award.ministerId">
+                <a [routerLink]="['/minister-knowmyminister', award.ministerId]">{{award.ministerId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'award-knowmyminister/'+ award.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

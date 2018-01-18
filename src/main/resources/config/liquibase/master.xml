@@ -5,6 +5,29 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162642_added_entity_Minister.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162643_added_entity_Award.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162644_added_entity_Image.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162645_added_entity_Photo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162646_added_entity_PoliticalParty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162647_added_entity_SocialLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162648_added_entity_Address.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162649_added_entity_Bio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162650_added_entity_WorkExperience.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162651_added_entity_Education.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162652_added_entity_Language.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162653_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162654_added_entity_State.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180118162642_added_entity_constraints_Minister.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162643_added_entity_constraints_Award.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162645_added_entity_constraints_Photo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162646_added_entity_constraints_PoliticalParty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162647_added_entity_constraints_SocialLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162648_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162649_added_entity_constraints_Bio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162650_added_entity_constraints_WorkExperience.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162651_added_entity_constraints_Education.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180118162654_added_entity_constraints_State.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

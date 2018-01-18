@@ -1,0 +1,158 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "logo",
+            "otherEntityName": "image",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "president",
+            "otherEntityName": "minister",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rajyasabhaLeader",
+            "otherEntityName": "minister",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "loksabhaLeader",
+            "otherEntityName": "minister",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "socialLink",
+            "otherEntityName": "socialLink",
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "minister",
+            "otherEntityName": "minister",
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "photo",
+            "otherEntityName": "photo",
+            "otherEntityRelationshipName": "politicalParty"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "headquarter",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "politicalParty"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abbreviation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "founded",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precededBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "newsPaper",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "youthWing",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "womensWing",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "peasantsWing",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "minorityWing",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "membership",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ideology",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "politicalPosition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "internationalAffiliation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "colour",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eCIStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "alliance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seatsInLokSabha",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seatsInRajyaSabha",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "electionSymbol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parliamentaryChairperson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180118162646",
+    "entityTableName": "political_party",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "knowmyminister"
+}

@@ -1,0 +1,61 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPhotoLabel" jhiTranslate="knowMyMinisterApp.photo.home.createOrEditLabel">Create or edit a Photo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!photo.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="photo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.photo.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                [(ngModel)]="photo.title" required/>
+            <div [hidden]="!(editForm.controls.title?.dirty && editForm.controls.title?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.title?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.photo.link" for="field_link">Link</label>
+            <input type="text" class="form-control" name="link" id="field_link"
+                [(ngModel)]="photo.link" required/>
+            <div [hidden]="!(editForm.controls.link?.dirty && editForm.controls.link?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.link?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.photo.minister" for="field_minister">Minister</label>
+            <select class="form-control" id="field_minister" name="minister" [(ngModel)]="photo.ministerId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ministerOption.id" *ngFor="let ministerOption of ministers; trackBy: trackMinisterById">{{ministerOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.photo.politicalParty" for="field_politicalParty">Political Party</label>
+            <select class="form-control" id="field_politicalParty" name="politicalParty" [(ngModel)]="photo.politicalPartyId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="politicalPartyOption.id" *ngFor="let politicalPartyOption of politicalparties; trackBy: trackPoliticalPartyById">{{politicalPartyOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

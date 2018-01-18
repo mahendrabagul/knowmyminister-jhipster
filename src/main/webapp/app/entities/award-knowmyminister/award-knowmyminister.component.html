@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="knowMyMinisterApp.award.home.title">Awards</span>
+        <button class="btn btn-primary float-right jh-create-entity create-award-knowmyminister" [routerLink]="['/', { outlets: { popup: ['award-knowmyminister-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="knowMyMinisterApp.award.home.createLabel">
+            Create new Award
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'knowMyMinisterApp.award.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="awards">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="title"><span jhiTranslate="knowMyMinisterApp.award.title">Title</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="startDate"><span jhiTranslate="knowMyMinisterApp.award.startDate">Start Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="issuer"><span jhiTranslate="knowMyMinisterApp.award.issuer">Issuer</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="knowMyMinisterApp.award.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ministerId"><span jhiTranslate="knowMyMinisterApp.award.minister">Minister</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let award of awards ;trackBy: trackId">
+                <td><a [routerLink]="['../award-knowmyminister', award.id ]">{{award.id}}</a></td>
+                <td>{{award.title}}</td>
+                <td>{{award.startDate | date:'medium'}}</td>
+                <td>{{award.issuer}}</td>
+                <td>{{award.description}}</td>
+                <td>
+                    <div *ngIf="award.ministerId">
+                        <a [routerLink]="['../minister-knowmyminister', award.ministerId  ]" >{{award.ministerId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../award-knowmyminister', award.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'award-knowmyminister/'+ award.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'award-knowmyminister/'+ award.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="awards && awards.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

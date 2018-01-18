@@ -1,0 +1,103 @@
+<div>
+    <h2>
+        <span jhiTranslate="knowMyMinisterApp.bio.home.title">Bios</span>
+        <button class="btn btn-primary float-right jh-create-entity create-bio-knowmyminister" [routerLink]="['/', { outlets: { popup: ['bio-knowmyminister-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="knowMyMinisterApp.bio.home.createLabel">
+            Create new Bio
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'knowMyMinisterApp.bio.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="bios">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.firstName">First Name</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.lastName">Last Name</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.middleName">Middle Name</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.mobileNo">Mobile No</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.email">Email</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.born">Born</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.age">Age</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.sex">Sex</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.spouse">Spouse</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.children">Children</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.website">Website</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.language">Language</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.bio.profilePicture">Profile Picture</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let bio of bios ;trackBy: trackId">
+                <td><a [routerLink]="['../bio-knowmyminister', bio.id ]">{{bio.id}}</a></td>
+                <td>{{bio.firstName}}</td>
+                <td>{{bio.lastName}}</td>
+                <td>{{bio.middleName}}</td>
+                <td>{{bio.mobileNo}}</td>
+                <td>{{bio.email}}</td>
+                <td>{{bio.born}}</td>
+                <td>{{bio.age}}</td>
+                <td>{{bio.sex}}</td>
+                <td>{{bio.spouse}}</td>
+                <td>{{bio.children}}</td>
+                <td>{{bio.website}}</td>
+                <td>
+                    <div *ngIf="bio.languageId">
+                        <a [routerLink]="['../language-knowmyminister', bio.languageId  ]" >{{bio.languageId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="bio.profilePictureId">
+                        <a [routerLink]="['../image-knowmyminister', bio.profilePictureId  ]" >{{bio.profilePictureId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../bio-knowmyminister', bio.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'bio-knowmyminister/'+ bio.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'bio-knowmyminister/'+ bio.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

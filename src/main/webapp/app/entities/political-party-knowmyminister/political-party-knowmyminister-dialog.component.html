@@ -1,0 +1,163 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPoliticalPartyLabel" jhiTranslate="knowMyMinisterApp.politicalParty.home.createOrEditLabel">Create or edit a Political Party</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!politicalParty.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="politicalParty.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="politicalParty.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.abbreviation" for="field_abbreviation">Abbreviation</label>
+            <input type="text" class="form-control" name="abbreviation" id="field_abbreviation"
+                [(ngModel)]="politicalParty.abbreviation" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.founded" for="field_founded">Founded</label>
+            <input type="text" class="form-control" name="founded" id="field_founded"
+                [(ngModel)]="politicalParty.founded" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.precededBy" for="field_precededBy">Preceded By</label>
+            <input type="text" class="form-control" name="precededBy" id="field_precededBy"
+                [(ngModel)]="politicalParty.precededBy" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.newsPaper" for="field_newsPaper">News Paper</label>
+            <input type="text" class="form-control" name="newsPaper" id="field_newsPaper"
+                [(ngModel)]="politicalParty.newsPaper" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.youthWing" for="field_youthWing">Youth Wing</label>
+            <input type="text" class="form-control" name="youthWing" id="field_youthWing"
+                [(ngModel)]="politicalParty.youthWing" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.womensWing" for="field_womensWing">Womens Wing</label>
+            <input type="text" class="form-control" name="womensWing" id="field_womensWing"
+                [(ngModel)]="politicalParty.womensWing" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.peasantsWing" for="field_peasantsWing">Peasants Wing</label>
+            <input type="text" class="form-control" name="peasantsWing" id="field_peasantsWing"
+                [(ngModel)]="politicalParty.peasantsWing" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.minorityWing" for="field_minorityWing">Minority Wing</label>
+            <input type="text" class="form-control" name="minorityWing" id="field_minorityWing"
+                [(ngModel)]="politicalParty.minorityWing" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.membership" for="field_membership">Membership</label>
+            <input type="text" class="form-control" name="membership" id="field_membership"
+                [(ngModel)]="politicalParty.membership" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.ideology" for="field_ideology">Ideology</label>
+            <input type="text" class="form-control" name="ideology" id="field_ideology"
+                [(ngModel)]="politicalParty.ideology" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.politicalPosition" for="field_politicalPosition">Political Position</label>
+            <input type="text" class="form-control" name="politicalPosition" id="field_politicalPosition"
+                [(ngModel)]="politicalParty.politicalPosition" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.internationalAffiliation" for="field_internationalAffiliation">International Affiliation</label>
+            <input type="text" class="form-control" name="internationalAffiliation" id="field_internationalAffiliation"
+                [(ngModel)]="politicalParty.internationalAffiliation" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.colour" for="field_colour">Colour</label>
+            <input type="text" class="form-control" name="colour" id="field_colour"
+                [(ngModel)]="politicalParty.colour" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.eCIStatus" for="field_eCIStatus">E CI Status</label>
+            <input type="text" class="form-control" name="eCIStatus" id="field_eCIStatus"
+                [(ngModel)]="politicalParty.eCIStatus" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.alliance" for="field_alliance">Alliance</label>
+            <input type="text" class="form-control" name="alliance" id="field_alliance"
+                [(ngModel)]="politicalParty.alliance" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.seatsInLokSabha" for="field_seatsInLokSabha">Seats In Lok Sabha</label>
+            <input type="text" class="form-control" name="seatsInLokSabha" id="field_seatsInLokSabha"
+                [(ngModel)]="politicalParty.seatsInLokSabha" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.seatsInRajyaSabha" for="field_seatsInRajyaSabha">Seats In Rajya Sabha</label>
+            <input type="text" class="form-control" name="seatsInRajyaSabha" id="field_seatsInRajyaSabha"
+                [(ngModel)]="politicalParty.seatsInRajyaSabha" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.electionSymbol" for="field_electionSymbol">Election Symbol</label>
+            <input type="text" class="form-control" name="electionSymbol" id="field_electionSymbol"
+                [(ngModel)]="politicalParty.electionSymbol" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                [(ngModel)]="politicalParty.website" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.parliamentaryChairperson" for="field_parliamentaryChairperson">Parliamentary Chairperson</label>
+            <input type="text" class="form-control" name="parliamentaryChairperson" id="field_parliamentaryChairperson"
+                [(ngModel)]="politicalParty.parliamentaryChairperson" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="politicalParty.email" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.logo" for="field_logo">Logo</label>
+            <select class="form-control" id="field_logo" name="logo" [(ngModel)]="politicalParty.logoId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="imageOption.id" *ngFor="let imageOption of logos; trackBy: trackImageById">{{imageOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.president" for="field_president">President</label>
+            <select class="form-control" id="field_president" name="president" [(ngModel)]="politicalParty.presidentId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ministerOption.id" *ngFor="let ministerOption of presidents; trackBy: trackMinisterById">{{ministerOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.rajyasabhaLeader" for="field_rajyasabhaLeader">Rajyasabha Leader</label>
+            <select class="form-control" id="field_rajyasabhaLeader" name="rajyasabhaLeader" [(ngModel)]="politicalParty.rajyasabhaLeaderId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ministerOption.id" *ngFor="let ministerOption of rajyasabhaleaders; trackBy: trackMinisterById">{{ministerOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.politicalParty.loksabhaLeader" for="field_loksabhaLeader">Loksabha Leader</label>
+            <select class="form-control" id="field_loksabhaLeader" name="loksabhaLeader" [(ngModel)]="politicalParty.loksabhaLeaderId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ministerOption.id" *ngFor="let ministerOption of loksabhaleaders; trackBy: trackMinisterById">{{ministerOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

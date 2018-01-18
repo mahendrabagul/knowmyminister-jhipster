@@ -1,0 +1,66 @@
+
+<div *ngIf="minister">
+    <h2><span jhiTranslate="knowMyMinisterApp.minister.detail.title">Minister</span> {{minister.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.personalBackground">Personal Background</span></dt>
+        <dd>
+            <span>{{minister.personalBackground}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.familyBackground">Family Background</span></dt>
+        <dd>
+            <span>{{minister.familyBackground}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.interests">Interests</span></dt>
+        <dd>
+            <span>{{minister.interests}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.ideal">Ideal</span></dt>
+        <dd>
+            <span>{{minister.ideal}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.motto">Motto</span></dt>
+        <dd>
+            <span>{{minister.motto}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.electionSign">Election Sign</span></dt>
+        <dd>
+            <div *ngIf="minister.electionSignId">
+                <a [routerLink]="['/image-knowmyminister', minister.electionSignId]">{{minister.electionSignId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.party">Party</span></dt>
+        <dd>
+            <div *ngIf="minister.partyId">
+                <a [routerLink]="['/political-party-knowmyminister', minister.partyId]">{{minister.partyId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.bio">Bio</span></dt>
+        <dd>
+            <div *ngIf="minister.bioId">
+                <a [routerLink]="['/bio-knowmyminister', minister.bioId]">{{minister.bioId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.minister.politicalParty">Political Party</span></dt>
+        <dd>
+            <div *ngIf="minister.politicalPartyId">
+                <a [routerLink]="['/political-party-knowmyminister', minister.politicalPartyId]">{{minister.politicalPartyId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'minister-knowmyminister/'+ minister.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

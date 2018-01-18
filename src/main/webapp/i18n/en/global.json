@@ -7,6 +7,19 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "ministerKnowmyminister": "Minister",
+                "awardKnowmyminister": "Award",
+                "imageKnowmyminister": "Image",
+                "photoKnowmyminister": "Photo",
+                "politicalPartyKnowmyminister": "Political Party",
+                "socialLinkKnowmyminister": "Social Link",
+                "addressKnowmyminister": "Address",
+                "bioKnowmyminister": "Bio",
+                "workExperienceKnowmyminister": "Work Experience",
+                "educationKnowmyminister": "Education",
+                "languageKnowmyminister": "Language",
+                "countryKnowmyminister": "Country",
+                "stateKnowmyminister": "State",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

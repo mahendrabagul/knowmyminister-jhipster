@@ -1,0 +1,34 @@
+{
+    "knowMyMinisterApp": {
+        "bio" : {
+            "home": {
+                "title": "Bios",
+                "createLabel": "नया Bio बनाएँ",
+                "createOrEditLabel": "Bio बनाएँ या संपादित करें",
+                "search": "Bio खोजें"
+            },
+            "created": "एक नया Bio [identifier: {{ param }}] तैयार है",
+            "updated": "एक Bio [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Bio [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Bio [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Bio"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "middleName": "Middle Name",
+            "mobileNo": "Mobile No",
+            "email": "Email",
+            "born": "Born",
+            "age": "Age",
+            "sex": "Sex",
+            "spouse": "Spouse",
+            "children": "Children",
+            "website": "Website",
+            "language": "Language",
+            "profilePicture": "Profile Picture"
+        }
+    }
+}

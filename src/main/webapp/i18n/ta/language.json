@@ -1,0 +1,22 @@
+{
+    "knowMyMinisterApp": {
+        "language" : {
+            "home": {
+                "title": "Languages",
+                "createLabel": "Language-ஐ உருவாக்கு",
+                "createOrEditLabel": "Language -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Language"
+            },
+            "created": "Language புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Language மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Language நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Language {{ id }}?"
+            },
+            "detail": {
+                "title": "Language"
+            },
+            "name": "Name"
+        }
+    }
+}

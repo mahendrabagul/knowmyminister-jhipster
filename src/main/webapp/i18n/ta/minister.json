@@ -1,0 +1,36 @@
+{
+    "knowMyMinisterApp": {
+        "minister" : {
+            "home": {
+                "title": "Ministers",
+                "createLabel": "Minister-ஐ உருவாக்கு",
+                "createOrEditLabel": "Minister -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Minister"
+            },
+            "created": "Minister புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Minister மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Minister நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Minister {{ id }}?"
+            },
+            "detail": {
+                "title": "Minister"
+            },
+            "personalBackground": "Personal Background",
+            "familyBackground": "Family Background",
+            "interests": "Interests",
+            "ideal": "Ideal",
+            "motto": "Motto",
+            "electionSign": "Election Sign",
+            "party": "Party",
+            "bio": "Bio",
+            "address": "Address",
+            "award": "Award",
+            "photo": "Photo",
+            "workExperince": "Work Experince",
+            "education": "Education",
+            "socialLink": "Social Link",
+            "politicalParty": "Political Party"
+        }
+    }
+}

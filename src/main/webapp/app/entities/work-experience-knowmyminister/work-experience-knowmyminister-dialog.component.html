@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myWorkExperienceLabel" jhiTranslate="knowMyMinisterApp.workExperience.home.createOrEditLabel">Create or edit a Work Experience</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!workExperience.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="workExperience.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.organization" for="field_organization">Organization</label>
+            <input type="text" class="form-control" name="organization" id="field_organization"
+                [(ngModel)]="workExperience.organization" required/>
+            <div [hidden]="!(editForm.controls.organization?.dirty && editForm.controls.organization?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.organization?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="workExperience.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.startDate" for="field_startDate">Start Date</label>
+            <div class="d-flex">
+                <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="workExperience.startDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.startDate?.dirty && editForm.controls.startDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.startDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.startDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.endDate" for="field_endDate">End Date</label>
+            <div class="d-flex">
+                <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="workExperience.endDate"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.endDate?.dirty && editForm.controls.endDate?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.endDate?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.endDate?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.minister" for="field_minister">Minister</label>
+            <select class="form-control" id="field_minister" name="minister" [(ngModel)]="workExperience.ministerId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ministerOption.id" *ngFor="let ministerOption of ministers; trackBy: trackMinisterById">{{ministerOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.workExperience.language" for="field_language">Language</label>
+            <select class="form-control" id="field_language" name="language" [(ngModel)]="workExperience.languageId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="languageOption.id" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

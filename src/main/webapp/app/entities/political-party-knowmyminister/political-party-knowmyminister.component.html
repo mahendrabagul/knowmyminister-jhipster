@@ -1,0 +1,145 @@
+<div>
+    <h2>
+        <span jhiTranslate="knowMyMinisterApp.politicalParty.home.title">Political Parties</span>
+        <button class="btn btn-primary float-right jh-create-entity create-political-party-knowmyminister" [routerLink]="['/', { outlets: { popup: ['political-party-knowmyminister-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="knowMyMinisterApp.politicalParty.home.createLabel">
+            Create new Political Party
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'knowMyMinisterApp.politicalParty.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="politicalParties">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="knowMyMinisterApp.politicalParty.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="abbreviation"><span jhiTranslate="knowMyMinisterApp.politicalParty.abbreviation">Abbreviation</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="founded"><span jhiTranslate="knowMyMinisterApp.politicalParty.founded">Founded</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="precededBy"><span jhiTranslate="knowMyMinisterApp.politicalParty.precededBy">Preceded By</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="newsPaper"><span jhiTranslate="knowMyMinisterApp.politicalParty.newsPaper">News Paper</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="youthWing"><span jhiTranslate="knowMyMinisterApp.politicalParty.youthWing">Youth Wing</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="womensWing"><span jhiTranslate="knowMyMinisterApp.politicalParty.womensWing">Womens Wing</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="peasantsWing"><span jhiTranslate="knowMyMinisterApp.politicalParty.peasantsWing">Peasants Wing</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="minorityWing"><span jhiTranslate="knowMyMinisterApp.politicalParty.minorityWing">Minority Wing</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="membership"><span jhiTranslate="knowMyMinisterApp.politicalParty.membership">Membership</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ideology"><span jhiTranslate="knowMyMinisterApp.politicalParty.ideology">Ideology</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="politicalPosition"><span jhiTranslate="knowMyMinisterApp.politicalParty.politicalPosition">Political Position</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="internationalAffiliation"><span jhiTranslate="knowMyMinisterApp.politicalParty.internationalAffiliation">International Affiliation</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="colour"><span jhiTranslate="knowMyMinisterApp.politicalParty.colour">Colour</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="eCIStatus"><span jhiTranslate="knowMyMinisterApp.politicalParty.eCIStatus">E CI Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="alliance"><span jhiTranslate="knowMyMinisterApp.politicalParty.alliance">Alliance</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="seatsInLokSabha"><span jhiTranslate="knowMyMinisterApp.politicalParty.seatsInLokSabha">Seats In Lok Sabha</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="seatsInRajyaSabha"><span jhiTranslate="knowMyMinisterApp.politicalParty.seatsInRajyaSabha">Seats In Rajya Sabha</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="electionSymbol"><span jhiTranslate="knowMyMinisterApp.politicalParty.electionSymbol">Election Symbol</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="website"><span jhiTranslate="knowMyMinisterApp.politicalParty.website">Website</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="parliamentaryChairperson"><span jhiTranslate="knowMyMinisterApp.politicalParty.parliamentaryChairperson">Parliamentary Chairperson</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="email"><span jhiTranslate="knowMyMinisterApp.politicalParty.email">Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="logoId"><span jhiTranslate="knowMyMinisterApp.politicalParty.logo">Logo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="presidentId"><span jhiTranslate="knowMyMinisterApp.politicalParty.president">President</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rajyasabhaLeaderId"><span jhiTranslate="knowMyMinisterApp.politicalParty.rajyasabhaLeader">Rajyasabha Leader</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="loksabhaLeaderId"><span jhiTranslate="knowMyMinisterApp.politicalParty.loksabhaLeader">Loksabha Leader</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let politicalParty of politicalParties ;trackBy: trackId">
+                <td><a [routerLink]="['../political-party-knowmyminister', politicalParty.id ]">{{politicalParty.id}}</a></td>
+                <td>{{politicalParty.description}}</td>
+                <td>{{politicalParty.abbreviation}}</td>
+                <td>{{politicalParty.founded}}</td>
+                <td>{{politicalParty.precededBy}}</td>
+                <td>{{politicalParty.newsPaper}}</td>
+                <td>{{politicalParty.youthWing}}</td>
+                <td>{{politicalParty.womensWing}}</td>
+                <td>{{politicalParty.peasantsWing}}</td>
+                <td>{{politicalParty.minorityWing}}</td>
+                <td>{{politicalParty.membership}}</td>
+                <td>{{politicalParty.ideology}}</td>
+                <td>{{politicalParty.politicalPosition}}</td>
+                <td>{{politicalParty.internationalAffiliation}}</td>
+                <td>{{politicalParty.colour}}</td>
+                <td>{{politicalParty.eCIStatus}}</td>
+                <td>{{politicalParty.alliance}}</td>
+                <td>{{politicalParty.seatsInLokSabha}}</td>
+                <td>{{politicalParty.seatsInRajyaSabha}}</td>
+                <td>{{politicalParty.electionSymbol}}</td>
+                <td>{{politicalParty.website}}</td>
+                <td>{{politicalParty.parliamentaryChairperson}}</td>
+                <td>{{politicalParty.email}}</td>
+                <td>
+                    <div *ngIf="politicalParty.logoId">
+                        <a [routerLink]="['../image-knowmyminister', politicalParty.logoId  ]" >{{politicalParty.logoId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="politicalParty.presidentId">
+                        <a [routerLink]="['../minister-knowmyminister', politicalParty.presidentId  ]" >{{politicalParty.presidentId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="politicalParty.rajyasabhaLeaderId">
+                        <a [routerLink]="['../minister-knowmyminister', politicalParty.rajyasabhaLeaderId  ]" >{{politicalParty.rajyasabhaLeaderId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="politicalParty.loksabhaLeaderId">
+                        <a [routerLink]="['../minister-knowmyminister', politicalParty.loksabhaLeaderId  ]" >{{politicalParty.loksabhaLeaderId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../political-party-knowmyminister', politicalParty.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'political-party-knowmyminister/'+ politicalParty.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'political-party-knowmyminister/'+ politicalParty.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="politicalParties && politicalParties.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

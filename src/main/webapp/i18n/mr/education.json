@@ -1,0 +1,27 @@
+{
+    "knowMyMinisterApp": {
+        "education" : {
+            "home": {
+                "title": "Educations",
+                "createLabel": "नवीन Education तयार करा",
+                "createOrEditLabel": "Education तयार किंवा संपादित करा",
+                "search": "Education शोधा"
+            },
+            "created": "Education [identifier: {{ param }}] तयार आहे",
+            "updated": "Education [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "Education [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "Education [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "Education"
+            },
+            "title": "Title",
+            "institute": "Institute",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "minister": "Minister",
+            "language": "Language"
+        }
+    }
+}

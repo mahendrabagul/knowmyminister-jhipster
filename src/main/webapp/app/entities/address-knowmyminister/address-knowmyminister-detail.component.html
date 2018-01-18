@@ -1,0 +1,74 @@
+
+<div *ngIf="address">
+    <h2><span jhiTranslate="knowMyMinisterApp.address.detail.title">Address</span> {{address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.address.line1">Line 1</span></dt>
+        <dd>
+            <span>{{address.line1}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.line2">Line 2</span></dt>
+        <dd>
+            <span>{{address.line2}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.area">Area</span></dt>
+        <dd>
+            <span>{{address.area}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.pincode">Pincode</span></dt>
+        <dd>
+            <span>{{address.pincode}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.village">Village</span></dt>
+        <dd>
+            <span>{{address.village}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.taluka">Taluka</span></dt>
+        <dd>
+            <span>{{address.taluka}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.city">City</span></dt>
+        <dd>
+            <span>{{address.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.minister">Minister</span></dt>
+        <dd>
+            <div *ngIf="address.ministerId">
+                <a [routerLink]="['/minister-knowmyminister', address.ministerId]">{{address.ministerId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.politicalParty">Political Party</span></dt>
+        <dd>
+            <div *ngIf="address.politicalPartyId">
+                <a [routerLink]="['/political-party-knowmyminister', address.politicalPartyId]">{{address.politicalPartyId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.state">State</span></dt>
+        <dd>
+            <div *ngIf="address.stateId">
+                <a [routerLink]="['/state-knowmyminister', address.stateId]">{{address.stateId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.address.contry">Contry</span></dt>
+        <dd>
+            <div *ngIf="address.contryId">
+                <a [routerLink]="['/country-knowmyminister', address.contryId]">{{address.contryId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'address-knowmyminister/'+ address.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

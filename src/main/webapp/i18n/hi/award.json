@@ -1,0 +1,26 @@
+{
+    "knowMyMinisterApp": {
+        "award" : {
+            "home": {
+                "title": "Awards",
+                "createLabel": "नया Award बनाएँ",
+                "createOrEditLabel": "Award बनाएँ या संपादित करें",
+                "search": "Award खोजें"
+            },
+            "created": "एक नया Award [identifier: {{ param }}] तैयार है",
+            "updated": "एक Award [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Award [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Award [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Award"
+            },
+            "title": "Title",
+            "startDate": "Start Date",
+            "issuer": "Issuer",
+            "description": "Description",
+            "minister": "Minister"
+        }
+    }
+}

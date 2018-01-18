@@ -1,0 +1,50 @@
+
+<div *ngIf="workExperience">
+    <h2><span jhiTranslate="knowMyMinisterApp.workExperience.detail.title">Work Experience</span> {{workExperience.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.organization">Organization</span></dt>
+        <dd>
+            <span>{{workExperience.organization}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.description">Description</span></dt>
+        <dd>
+            <span>{{workExperience.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{workExperience.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.endDate">End Date</span></dt>
+        <dd>
+            <span>{{workExperience.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.minister">Minister</span></dt>
+        <dd>
+            <div *ngIf="workExperience.ministerId">
+                <a [routerLink]="['/minister-knowmyminister', workExperience.ministerId]">{{workExperience.ministerId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.workExperience.language">Language</span></dt>
+        <dd>
+            <div *ngIf="workExperience.languageId">
+                <a [routerLink]="['/language-knowmyminister', workExperience.languageId]">{{workExperience.languageId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'work-experience-knowmyminister/'+ workExperience.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,42 @@
+
+<div *ngIf="photo">
+    <h2><span jhiTranslate="knowMyMinisterApp.photo.detail.title">Photo</span> {{photo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.photo.title">Title</span></dt>
+        <dd>
+            <span>{{photo.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.photo.link">Link</span></dt>
+        <dd>
+            <span>{{photo.link}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.photo.minister">Minister</span></dt>
+        <dd>
+            <div *ngIf="photo.ministerId">
+                <a [routerLink]="['/minister-knowmyminister', photo.ministerId]">{{photo.ministerId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.photo.politicalParty">Political Party</span></dt>
+        <dd>
+            <div *ngIf="photo.politicalPartyId">
+                <a [routerLink]="['/political-party-knowmyminister', photo.politicalPartyId]">{{photo.politicalPartyId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'photo-knowmyminister/'+ photo.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

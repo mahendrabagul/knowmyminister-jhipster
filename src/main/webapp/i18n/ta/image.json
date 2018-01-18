@@ -1,0 +1,23 @@
+{
+    "knowMyMinisterApp": {
+        "image" : {
+            "home": {
+                "title": "Images",
+                "createLabel": "Image-ஐ உருவாக்கு",
+                "createOrEditLabel": "Image -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Image"
+            },
+            "created": "Image புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Image மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Image நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Image {{ id }}?"
+            },
+            "detail": {
+                "title": "Image"
+            },
+            "title": "Title",
+            "link": "Link"
+        }
+    }
+}

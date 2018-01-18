@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "minister",
+            "otherEntityName": "minister",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "politicalParty",
+            "otherEntityName": "politicalParty",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "state",
+            "otherEntityName": "state",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "address"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "contry",
+            "otherEntityName": "country",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "address"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "line1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "line2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pincode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "village",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taluka",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180118162648",
+    "entityTableName": "address",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "knowmyminister"
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Address.
+    -->
+    <changeSet id="20180118162648-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="minister_id"
+                                 baseTableName="address"
+                                 constraintName="fk_address_minister_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="minister"/>
+
+        <addForeignKeyConstraint baseColumnNames="political_party_id"
+                                 baseTableName="address"
+                                 constraintName="fk_address_political_party_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="political_party"/>
+
+        <addForeignKeyConstraint baseColumnNames="state_id"
+                                 baseTableName="address"
+                                 constraintName="fk_address_state_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="state"/>
+
+        <addForeignKeyConstraint baseColumnNames="contry_id"
+                                 baseTableName="address"
+                                 constraintName="fk_address_contry_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="country"/>
+
+    </changeSet>
+</databaseChangeLog>

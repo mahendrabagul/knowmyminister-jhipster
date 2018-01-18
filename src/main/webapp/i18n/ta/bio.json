@@ -1,0 +1,34 @@
+{
+    "knowMyMinisterApp": {
+        "bio" : {
+            "home": {
+                "title": "Bios",
+                "createLabel": "Bio-ஐ உருவாக்கு",
+                "createOrEditLabel": "Bio -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Bio"
+            },
+            "created": "Bio புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Bio மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Bio நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Bio {{ id }}?"
+            },
+            "detail": {
+                "title": "Bio"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "middleName": "Middle Name",
+            "mobileNo": "Mobile No",
+            "email": "Email",
+            "born": "Born",
+            "age": "Age",
+            "sex": "Sex",
+            "spouse": "Spouse",
+            "children": "Children",
+            "website": "Website",
+            "language": "Language",
+            "profilePicture": "Profile Picture"
+        }
+    }
+}

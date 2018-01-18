@@ -1,0 +1,131 @@
+entity Minister {
+    personalBackground String,
+    familyBackground String,
+    interests String,
+    ideal String,
+    motto String
+}
+
+entity Award {
+	title String required,
+    startDate Instant required,
+	issuer String required,
+    description String
+}
+entity Image {
+	title String required,
+    link String required
+}
+entity Photo {
+	title String required,
+    link String required
+}
+
+entity PoliticalParty {
+    description String,
+    abbreviation String,
+	founded String,
+    precededBy String
+    newsPaper String,
+    youthWing String,
+    womensWing String,
+	peasantsWing String,
+	minorityWing String,
+	membership String,
+    ideology String,
+    politicalPosition String,
+	internationalAffiliation String,
+	colour String,
+	eCIStatus String,
+	alliance String,
+	seatsInLokSabha	 String,
+	seatsInRajyaSabha String,	
+	electionSymbol String,
+	website String,
+    parliamentaryChairperson String,
+    email String
+}
+
+entity SocialLink {
+	provider String required,
+    link String required
+}
+entity Address {
+  	line1 String,
+    line2 String,
+    area String,
+    pincode String required,
+    village String,
+    taluka String,
+    city String required
+}
+entity Bio {
+    firstName String required,
+    lastName String required,
+    middleName String,
+    mobileNo String,
+    email String,
+    born String required,
+    age Integer required,
+    sex Integer required,
+    spouse String,
+    children String,
+    website String
+}
+
+entity WorkExperience {
+    organization String required,
+    description String,
+    startDate Instant required,
+	endDate Instant required
+}
+
+entity Education{
+	title String,
+    institute String,
+    startDate Instant,
+	endDate Instant
+}
+entity Language {
+	name String 
+}
+
+entity Country {
+    name String
+}
+entity State{
+	name String
+}
+
+relationship OneToOne {
+  	Minister{electionSign} to Image,
+    Minister{party} to PoliticalParty,
+    Minister{bio} to Bio,
+    Bio{language} to Language,
+    Bio{profilePicture} to Image,
+    Address{state} to State,
+    Address{contry} to Country,
+    PoliticalParty{logo} to Image,
+    PoliticalParty{president} to Minister,
+    PoliticalParty{rajyasabhaLeader} to Minister,
+    PoliticalParty{loksabhaLeader} to Minister,
+    State{country} to Country,
+    WorkExperience{language} to Language,
+    Education{language} to Language    
+}
+relationship OneToMany {
+	Minister{address} to Address,
+	Minister{award} to	Award,
+    Minister{photo} to Photo,
+    Minister{workExperince} to WorkExperience,
+    Minister{education} to Education,
+    Minister{socialLink} to SocialLink,
+    PoliticalParty{socialLink} to SocialLink,
+    PoliticalParty{minister} to Minister,
+    PoliticalParty{photo} to Photo,
+    PoliticalParty{headquarter} to Address
+}
+paginate PoliticalParty, Minister, State, Country, Language, WorkExperience, Award, Education with pagination
+dto * with mapstruct
+service all with serviceImpl
+angularSuffix * with knowmyminister

@@ -1,0 +1,27 @@
+{
+    "knowMyMinisterApp": {
+        "education" : {
+            "home": {
+                "title": "Educations",
+                "createLabel": "Education-ஐ உருவாக்கு",
+                "createOrEditLabel": "Education -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Education"
+            },
+            "created": "Education புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Education மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Education நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Education {{ id }}?"
+            },
+            "detail": {
+                "title": "Education"
+            },
+            "title": "Title",
+            "institute": "Institute",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "minister": "Minister",
+            "language": "Language"
+        }
+    }
+}

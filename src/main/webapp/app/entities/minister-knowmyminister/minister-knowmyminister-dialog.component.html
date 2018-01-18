@@ -1,0 +1,78 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMinisterLabel" jhiTranslate="knowMyMinisterApp.minister.home.createOrEditLabel">Create or edit a Minister</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!minister.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="minister.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.personalBackground" for="field_personalBackground">Personal Background</label>
+            <input type="text" class="form-control" name="personalBackground" id="field_personalBackground"
+                [(ngModel)]="minister.personalBackground" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.familyBackground" for="field_familyBackground">Family Background</label>
+            <input type="text" class="form-control" name="familyBackground" id="field_familyBackground"
+                [(ngModel)]="minister.familyBackground" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.interests" for="field_interests">Interests</label>
+            <input type="text" class="form-control" name="interests" id="field_interests"
+                [(ngModel)]="minister.interests" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.ideal" for="field_ideal">Ideal</label>
+            <input type="text" class="form-control" name="ideal" id="field_ideal"
+                [(ngModel)]="minister.ideal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.motto" for="field_motto">Motto</label>
+            <input type="text" class="form-control" name="motto" id="field_motto"
+                [(ngModel)]="minister.motto" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.electionSign" for="field_electionSign">Election Sign</label>
+            <select class="form-control" id="field_electionSign" name="electionSign" [(ngModel)]="minister.electionSignId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="imageOption.id" *ngFor="let imageOption of electionsigns; trackBy: trackImageById">{{imageOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.party" for="field_party">Party</label>
+            <select class="form-control" id="field_party" name="party" [(ngModel)]="minister.partyId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="politicalPartyOption.id" *ngFor="let politicalPartyOption of parties; trackBy: trackPoliticalPartyById">{{politicalPartyOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.bio" for="field_bio">Bio</label>
+            <select class="form-control" id="field_bio" name="bio" [(ngModel)]="minister.bioId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bioOption.id" *ngFor="let bioOption of bios; trackBy: trackBioById">{{bioOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.minister.politicalParty" for="field_politicalParty">Political Party</label>
+            <select class="form-control" id="field_politicalParty" name="politicalParty" [(ngModel)]="minister.politicalPartyId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="politicalPartyOption.id" *ngFor="let politicalPartyOption of politicalparties; trackBy: trackPoliticalPartyById">{{politicalPartyOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

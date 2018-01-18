@@ -1,0 +1,107 @@
+<div>
+    <h2>
+        <span jhiTranslate="knowMyMinisterApp.address.home.title">Addresses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-address-knowmyminister" [routerLink]="['/', { outlets: { popup: ['address-knowmyminister-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="knowMyMinisterApp.address.home.createLabel">
+            Create new Address
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'knowMyMinisterApp.address.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="addresses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.line1">Line 1</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.line2">Line 2</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.area">Area</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.pincode">Pincode</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.village">Village</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.taluka">Taluka</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.city">City</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.minister">Minister</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.politicalParty">Political Party</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.state">State</span></th>
+            <th><span jhiTranslate="knowMyMinisterApp.address.contry">Contry</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let address of addresses ;trackBy: trackId">
+                <td><a [routerLink]="['../address-knowmyminister', address.id ]">{{address.id}}</a></td>
+                <td>{{address.line1}}</td>
+                <td>{{address.line2}}</td>
+                <td>{{address.area}}</td>
+                <td>{{address.pincode}}</td>
+                <td>{{address.village}}</td>
+                <td>{{address.taluka}}</td>
+                <td>{{address.city}}</td>
+                <td>
+                    <div *ngIf="address.ministerId">
+                        <a [routerLink]="['../minister-knowmyminister', address.ministerId  ]" >{{address.ministerId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="address.politicalPartyId">
+                        <a [routerLink]="['../political-party-knowmyminister', address.politicalPartyId  ]" >{{address.politicalPartyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="address.stateId">
+                        <a [routerLink]="['../state-knowmyminister', address.stateId  ]" >{{address.stateId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="address.contryId">
+                        <a [routerLink]="['../country-knowmyminister', address.contryId  ]" >{{address.contryId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../address-knowmyminister', address.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'address-knowmyminister/'+ address.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'address-knowmyminister/'+ address.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

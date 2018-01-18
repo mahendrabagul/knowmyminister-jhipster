@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity PoliticalParty.
+    -->
+    <changeSet id="20180118162646-1" author="jhipster">
+        <createTable tableName="political_party">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="abbreviation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="founded" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="preceded_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="news_paper" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="youth_wing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="womens_wing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="peasants_wing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="minority_wing" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="membership" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ideology" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="political_position" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="international_affiliation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="colour" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="e_ci_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="alliance" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="seats_in_lok_sabha" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="seats_in_rajya_sabha" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="election_symbol" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="website" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="parliamentary_chairperson" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="logo_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="president_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="rajyasabha_leader_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>            <column name="loksabha_leader_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

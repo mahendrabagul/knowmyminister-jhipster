@@ -1,0 +1,51 @@
+{
+    "knowMyMinisterApp": {
+        "politicalParty" : {
+            "home": {
+                "title": "Political Parties",
+                "createLabel": "Create a new Political Party",
+                "createOrEditLabel": "Create or edit a Political Party",
+                "search": "Search for Political Party"
+            },
+            "created": "A new Political Party is created with identifier {{ param }}",
+            "updated": "A Political Party is updated with identifier {{ param }}",
+            "deleted": "A Political Party is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Political Party {{ id }}?"
+            },
+            "detail": {
+                "title": "Political Party"
+            },
+            "description": "Description",
+            "abbreviation": "Abbreviation",
+            "founded": "Founded",
+            "precededBy": "Preceded By",
+            "newsPaper": "News Paper",
+            "youthWing": "Youth Wing",
+            "womensWing": "Womens Wing",
+            "peasantsWing": "Peasants Wing",
+            "minorityWing": "Minority Wing",
+            "membership": "Membership",
+            "ideology": "Ideology",
+            "politicalPosition": "Political Position",
+            "internationalAffiliation": "International Affiliation",
+            "colour": "Colour",
+            "eCIStatus": "E CI Status",
+            "alliance": "Alliance",
+            "seatsInLokSabha": "Seats In Lok Sabha",
+            "seatsInRajyaSabha": "Seats In Rajya Sabha",
+            "electionSymbol": "Election Symbol",
+            "website": "Website",
+            "parliamentaryChairperson": "Parliamentary Chairperson",
+            "email": "Email",
+            "logo": "Logo",
+            "president": "President",
+            "rajyasabhaLeader": "Rajyasabha Leader",
+            "loksabhaLeader": "Loksabha Leader",
+            "socialLink": "Social Link",
+            "minister": "Minister",
+            "photo": "Photo",
+            "headquarter": "Headquarter"
+        }
+    }
+}

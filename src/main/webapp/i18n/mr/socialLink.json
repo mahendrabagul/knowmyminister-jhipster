@@ -1,0 +1,25 @@
+{
+    "knowMyMinisterApp": {
+        "socialLink" : {
+            "home": {
+                "title": "Social Links",
+                "createLabel": "नवीन Social Link तयार करा",
+                "createOrEditLabel": "Social Link तयार किंवा संपादित करा",
+                "search": "Social Link शोधा"
+            },
+            "created": "Social Link [identifier: {{ param }}] तयार आहे",
+            "updated": "Social Link [identifier: {{ param }}] सुधारित केले आहे",
+            "deleted": "Social Link [identifier: {{ param }}] हटविले आहे",
+            "delete": {
+                "question": "Social Link [id: {{ id }}] काढून टाकण्याबाबत पुष्टी?"
+            },
+            "detail": {
+                "title": "Social Link"
+            },
+            "provider": "Provider",
+            "link": "Link",
+            "minister": "Minister",
+            "politicalParty": "Political Party"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "knowMyMinisterApp": {
+        "workExperience" : {
+            "home": {
+                "title": "WorkExperiences",
+                "createLabel": "नया Work Experience बनाएँ",
+                "createOrEditLabel": "Work Experience बनाएँ या संपादित करें",
+                "search": "Work Experience खोजें"
+            },
+            "created": "एक नया Work Experience [identifier: {{ param }}] तैयार है",
+            "updated": "एक Work Experience [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Work Experience [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Work Experience [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Work Experience"
+            },
+            "organization": "Organization",
+            "description": "Description",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "minister": "Minister",
+            "language": "Language"
+        }
+    }
+}

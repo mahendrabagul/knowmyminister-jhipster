@@ -43,6 +43,29 @@ public class CacheConfiguration {
             cm.createCache(io.github.knowmyminister.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.knowmyminister.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(io.github.knowmyminister.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".addresses", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".awards", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".photos", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".workExperinces", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".educations", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Minister.class.getName() + ".socialLinks", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Award.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Image.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Photo.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.PoliticalParty.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.PoliticalParty.class.getName() + ".socialLinks", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.PoliticalParty.class.getName() + ".ministers", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.PoliticalParty.class.getName() + ".photos", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.PoliticalParty.class.getName() + ".headquarters", jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.SocialLink.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Address.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Bio.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.WorkExperience.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Education.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Language.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.Country.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.knowmyminister.domain.State.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

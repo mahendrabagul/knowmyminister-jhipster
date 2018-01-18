@@ -1,0 +1,100 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "electionSign",
+            "otherEntityName": "image",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "party",
+            "otherEntityName": "politicalParty",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bio",
+            "otherEntityName": "bio",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "award",
+            "otherEntityName": "award",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "photo",
+            "otherEntityName": "photo",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "workExperince",
+            "otherEntityName": "workExperience",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "education",
+            "otherEntityName": "education",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "socialLink",
+            "otherEntityName": "socialLink",
+            "otherEntityRelationshipName": "minister"
+        },
+        {
+            "relationshipName": "politicalParty",
+            "otherEntityName": "politicalParty",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "personalBackground",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "familyBackground",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "interests",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ideal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "motto",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180118162642",
+    "entityTableName": "minister",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "knowmyminister"
+}

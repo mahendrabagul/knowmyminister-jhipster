@@ -1,0 +1,132 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBioLabel" jhiTranslate="knowMyMinisterApp.bio.home.createOrEditLabel">Create or edit a Bio</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!bio.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="bio.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                [(ngModel)]="bio.firstName" required/>
+            <div [hidden]="!(editForm.controls.firstName?.dirty && editForm.controls.firstName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.firstName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                [(ngModel)]="bio.lastName" required/>
+            <div [hidden]="!(editForm.controls.lastName?.dirty && editForm.controls.lastName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.lastName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.middleName" for="field_middleName">Middle Name</label>
+            <input type="text" class="form-control" name="middleName" id="field_middleName"
+                [(ngModel)]="bio.middleName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.mobileNo" for="field_mobileNo">Mobile No</label>
+            <input type="text" class="form-control" name="mobileNo" id="field_mobileNo"
+                [(ngModel)]="bio.mobileNo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="bio.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.born" for="field_born">Born</label>
+            <input type="text" class="form-control" name="born" id="field_born"
+                [(ngModel)]="bio.born" required/>
+            <div [hidden]="!(editForm.controls.born?.dirty && editForm.controls.born?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.born?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.age" for="field_age">Age</label>
+            <input type="number" class="form-control" name="age" id="field_age"
+                [(ngModel)]="bio.age" required/>
+            <div [hidden]="!(editForm.controls.age?.dirty && editForm.controls.age?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.age?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.age?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.sex" for="field_sex">Sex</label>
+            <input type="number" class="form-control" name="sex" id="field_sex"
+                [(ngModel)]="bio.sex" required/>
+            <div [hidden]="!(editForm.controls.sex?.dirty && editForm.controls.sex?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.sex?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.sex?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.spouse" for="field_spouse">Spouse</label>
+            <input type="text" class="form-control" name="spouse" id="field_spouse"
+                [(ngModel)]="bio.spouse" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.children" for="field_children">Children</label>
+            <input type="text" class="form-control" name="children" id="field_children"
+                [(ngModel)]="bio.children" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                [(ngModel)]="bio.website" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.language" for="field_language">Language</label>
+            <select class="form-control" id="field_language" name="language" [(ngModel)]="bio.languageId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="languageOption.id" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="knowMyMinisterApp.bio.profilePicture" for="field_profilePicture">Profile Picture</label>
+            <select class="form-control" id="field_profilePicture" name="profilePicture" [(ngModel)]="bio.profilePictureId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="imageOption.id" *ngFor="let imageOption of profilepictures; trackBy: trackImageById">{{imageOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

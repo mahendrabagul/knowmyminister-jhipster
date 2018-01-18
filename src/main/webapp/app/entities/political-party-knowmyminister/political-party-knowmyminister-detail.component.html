@@ -1,0 +1,134 @@
+
+<div *ngIf="politicalParty">
+    <h2><span jhiTranslate="knowMyMinisterApp.politicalParty.detail.title">Political Party</span> {{politicalParty.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.description">Description</span></dt>
+        <dd>
+            <span>{{politicalParty.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.abbreviation">Abbreviation</span></dt>
+        <dd>
+            <span>{{politicalParty.abbreviation}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.founded">Founded</span></dt>
+        <dd>
+            <span>{{politicalParty.founded}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.precededBy">Preceded By</span></dt>
+        <dd>
+            <span>{{politicalParty.precededBy}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.newsPaper">News Paper</span></dt>
+        <dd>
+            <span>{{politicalParty.newsPaper}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.youthWing">Youth Wing</span></dt>
+        <dd>
+            <span>{{politicalParty.youthWing}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.womensWing">Womens Wing</span></dt>
+        <dd>
+            <span>{{politicalParty.womensWing}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.peasantsWing">Peasants Wing</span></dt>
+        <dd>
+            <span>{{politicalParty.peasantsWing}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.minorityWing">Minority Wing</span></dt>
+        <dd>
+            <span>{{politicalParty.minorityWing}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.membership">Membership</span></dt>
+        <dd>
+            <span>{{politicalParty.membership}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.ideology">Ideology</span></dt>
+        <dd>
+            <span>{{politicalParty.ideology}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.politicalPosition">Political Position</span></dt>
+        <dd>
+            <span>{{politicalParty.politicalPosition}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.internationalAffiliation">International Affiliation</span></dt>
+        <dd>
+            <span>{{politicalParty.internationalAffiliation}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.colour">Colour</span></dt>
+        <dd>
+            <span>{{politicalParty.colour}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.eCIStatus">E CI Status</span></dt>
+        <dd>
+            <span>{{politicalParty.eCIStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.alliance">Alliance</span></dt>
+        <dd>
+            <span>{{politicalParty.alliance}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.seatsInLokSabha">Seats In Lok Sabha</span></dt>
+        <dd>
+            <span>{{politicalParty.seatsInLokSabha}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.seatsInRajyaSabha">Seats In Rajya Sabha</span></dt>
+        <dd>
+            <span>{{politicalParty.seatsInRajyaSabha}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.electionSymbol">Election Symbol</span></dt>
+        <dd>
+            <span>{{politicalParty.electionSymbol}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.website">Website</span></dt>
+        <dd>
+            <span>{{politicalParty.website}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.parliamentaryChairperson">Parliamentary Chairperson</span></dt>
+        <dd>
+            <span>{{politicalParty.parliamentaryChairperson}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.email">Email</span></dt>
+        <dd>
+            <span>{{politicalParty.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.logo">Logo</span></dt>
+        <dd>
+            <div *ngIf="politicalParty.logoId">
+                <a [routerLink]="['/image-knowmyminister', politicalParty.logoId]">{{politicalParty.logoId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.president">President</span></dt>
+        <dd>
+            <div *ngIf="politicalParty.presidentId">
+                <a [routerLink]="['/minister-knowmyminister', politicalParty.presidentId]">{{politicalParty.presidentId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.rajyasabhaLeader">Rajyasabha Leader</span></dt>
+        <dd>
+            <div *ngIf="politicalParty.rajyasabhaLeaderId">
+                <a [routerLink]="['/minister-knowmyminister', politicalParty.rajyasabhaLeaderId]">{{politicalParty.rajyasabhaLeaderId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.politicalParty.loksabhaLeader">Loksabha Leader</span></dt>
+        <dd>
+            <div *ngIf="politicalParty.loksabhaLeaderId">
+                <a [routerLink]="['/minister-knowmyminister', politicalParty.loksabhaLeaderId]">{{politicalParty.loksabhaLeaderId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'political-party-knowmyminister/'+ politicalParty.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

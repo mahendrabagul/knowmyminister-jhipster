@@ -1,0 +1,26 @@
+{
+    "knowMyMinisterApp": {
+        "award" : {
+            "home": {
+                "title": "Awards",
+                "createLabel": "Award-ஐ உருவாக்கு",
+                "createOrEditLabel": "Award -ஐ மாற்று (அ) உருவாக்கு",
+                "search": "Search for Award"
+            },
+            "created": "Award புதிதாக உருவாக்கப்பட்டது, அடையாளம் {{ param }}",
+            "updated": "Award மாற்றப்பட்டது, அடையாளம்  {{ param }}",
+            "deleted": "A Award நீக்கப்பட்டது, அடையாளம {{ param }}",
+            "delete": {
+                "question": "நீக்குவதற்கு உறுதி செய் Award {{ id }}?"
+            },
+            "detail": {
+                "title": "Award"
+            },
+            "title": "Title",
+            "startDate": "Start Date",
+            "issuer": "Issuer",
+            "description": "Description",
+            "minister": "Minister"
+        }
+    }
+}

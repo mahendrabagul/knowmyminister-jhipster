@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Minister.
+    -->
+    <changeSet id="20180118162642-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="election_sign_id"
+                                 baseTableName="minister"
+                                 constraintName="fk_minister_election_sign_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="image"/>
+
+        <addForeignKeyConstraint baseColumnNames="party_id"
+                                 baseTableName="minister"
+                                 constraintName="fk_minister_party_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="political_party"/>
+
+        <addForeignKeyConstraint baseColumnNames="bio_id"
+                                 baseTableName="minister"
+                                 constraintName="fk_minister_bio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bio"/>
+
+        <addForeignKeyConstraint baseColumnNames="political_party_id"
+                                 baseTableName="minister"
+                                 constraintName="fk_minister_political_party_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="political_party"/>
+
+    </changeSet>
+</databaseChangeLog>

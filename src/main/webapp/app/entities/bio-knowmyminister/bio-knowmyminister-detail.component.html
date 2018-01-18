@@ -1,0 +1,78 @@
+
+<div *ngIf="bio">
+    <h2><span jhiTranslate="knowMyMinisterApp.bio.detail.title">Bio</span> {{bio.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.firstName">First Name</span></dt>
+        <dd>
+            <span>{{bio.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{bio.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.middleName">Middle Name</span></dt>
+        <dd>
+            <span>{{bio.middleName}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.mobileNo">Mobile No</span></dt>
+        <dd>
+            <span>{{bio.mobileNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.email">Email</span></dt>
+        <dd>
+            <span>{{bio.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.born">Born</span></dt>
+        <dd>
+            <span>{{bio.born}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.age">Age</span></dt>
+        <dd>
+            <span>{{bio.age}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.sex">Sex</span></dt>
+        <dd>
+            <span>{{bio.sex}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.spouse">Spouse</span></dt>
+        <dd>
+            <span>{{bio.spouse}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.children">Children</span></dt>
+        <dd>
+            <span>{{bio.children}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.website">Website</span></dt>
+        <dd>
+            <span>{{bio.website}}</span>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.language">Language</span></dt>
+        <dd>
+            <div *ngIf="bio.languageId">
+                <a [routerLink]="['/language-knowmyminister', bio.languageId]">{{bio.languageId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="knowMyMinisterApp.bio.profilePicture">Profile Picture</span></dt>
+        <dd>
+            <div *ngIf="bio.profilePictureId">
+                <a [routerLink]="['/image-knowmyminister', bio.profilePictureId]">{{bio.profilePictureId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bio-knowmyminister/'+ bio.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
