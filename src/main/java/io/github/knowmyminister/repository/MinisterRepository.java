@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.*;
 /**
  * Spring Data JPA repository for the Minister entity.
  */
-@SuppressWarnings("unused")
 @Repository
 public interface MinisterRepository extends JpaRepository<Minister, Long> {
 

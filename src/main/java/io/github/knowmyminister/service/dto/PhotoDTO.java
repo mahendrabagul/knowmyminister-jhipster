@@ -1,96 +1,109 @@
 package io.github.knowmyminister.service.dto;
 
-
-import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * A DTO for the Photo entity.
  */
-public class PhotoDTO implements Serializable {
+public class PhotoDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = -5179442909080613386L;
 
-    @NotNull
-    private String title;
+	private Long id;
 
-    @NotNull
-    private String link;
+	@NotNull
+	private String title;
 
-    private Long ministerId;
+	@NotNull
+	private String link;
 
-    private Long politicalPartyId;
+	private Long ministerId;
 
-    public Long getId() {
-        return id;
-    }
+	private Long politicalPartyId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public String getTitle()
+	{
+		return title;
+	}
 
-    public String getLink() {
-        return link;
-    }
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
 
-    public void setLink(String link) {
-        this.link = link;
-    }
+	public String getLink()
+	{
+		return link;
+	}
 
-    public Long getMinisterId() {
-        return ministerId;
-    }
+	public void setLink(String link)
+	{
+		this.link = link;
+	}
 
-    public void setMinisterId(Long ministerId) {
-        this.ministerId = ministerId;
-    }
+	public Long getMinisterId()
+	{
+		return ministerId;
+	}
 
-    public Long getPoliticalPartyId() {
-        return politicalPartyId;
-    }
+	public void setMinisterId(Long ministerId)
+	{
+		this.ministerId = ministerId;
+	}
 
-    public void setPoliticalPartyId(Long politicalPartyId) {
-        this.politicalPartyId = politicalPartyId;
-    }
+	public Long getPoliticalPartyId()
+	{
+		return politicalPartyId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setPoliticalPartyId(Long politicalPartyId)
+	{
+		this.politicalPartyId = politicalPartyId;
+	}
 
-        PhotoDTO photoDTO = (PhotoDTO) o;
-        if(photoDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), photoDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		PhotoDTO photoDTO = (PhotoDTO) o;
+		if (photoDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), photoDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "PhotoDTO{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", link='" + getLink() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "PhotoDTO{" + "id=" + getId() + ", title='" + getTitle() + "'" + ", link='" + getLink() + "'" + "}";
+	}
 }

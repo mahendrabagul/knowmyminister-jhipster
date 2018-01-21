@@ -1,60 +1,69 @@
 package io.github.knowmyminister.service.dto;
 
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * A DTO for the Country entity.
  */
-public class CountryDTO implements Serializable {
+public class CountryDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = -3885280532238552846L;
 
-    private String name;
+	private Long id;
 
-    public Long getId() {
-        return id;
-    }
+	private String name;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName()
+	{
+		return name;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setName(String name)
+	{
+		this.name = name;
+	}
 
-        CountryDTO countryDTO = (CountryDTO) o;
-        if(countryDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), countryDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		CountryDTO countryDTO = (CountryDTO) o;
+		if (countryDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), countryDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "CountryDTO{" +
-            "id=" + getId() +
-            ", name='" + getName() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "CountryDTO{" + "id=" + getId() + ", name='" + getName() + "'" + "}";
+	}
 }

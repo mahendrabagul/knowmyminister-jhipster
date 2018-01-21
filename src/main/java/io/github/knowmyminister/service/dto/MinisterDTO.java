@@ -1,146 +1,167 @@
 package io.github.knowmyminister.service.dto;
 
-
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
  * A DTO for the Minister entity.
  */
-public class MinisterDTO implements Serializable {
+public class MinisterDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = -182046147462611344L;
 
-    private String personalBackground;
+	private Long id;
 
-    private String familyBackground;
+	private String personalBackground;
 
-    private String interests;
+	private String familyBackground;
 
-    private String ideal;
+	private String interests;
 
-    private String motto;
+	private String ideal;
 
-    private Long electionSignId;
+	private String motto;
 
-    private Long partyId;
+	private Long electionSignId;
 
-    private Long bioId;
+	private Long partyId;
 
-    private Long politicalPartyId;
+	private Long bioId;
 
-    public Long getId() {
-        return id;
-    }
+	private Long politicalPartyId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getPersonalBackground() {
-        return personalBackground;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setPersonalBackground(String personalBackground) {
-        this.personalBackground = personalBackground;
-    }
+	public String getPersonalBackground()
+	{
+		return personalBackground;
+	}
 
-    public String getFamilyBackground() {
-        return familyBackground;
-    }
+	public void setPersonalBackground(String personalBackground)
+	{
+		this.personalBackground = personalBackground;
+	}
 
-    public void setFamilyBackground(String familyBackground) {
-        this.familyBackground = familyBackground;
-    }
+	public String getFamilyBackground()
+	{
+		return familyBackground;
+	}
 
-    public String getInterests() {
-        return interests;
-    }
+	public void setFamilyBackground(String familyBackground)
+	{
+		this.familyBackground = familyBackground;
+	}
 
-    public void setInterests(String interests) {
-        this.interests = interests;
-    }
+	public String getInterests()
+	{
+		return interests;
+	}
 
-    public String getIdeal() {
-        return ideal;
-    }
+	public void setInterests(String interests)
+	{
+		this.interests = interests;
+	}
 
-    public void setIdeal(String ideal) {
-        this.ideal = ideal;
-    }
+	public String getIdeal()
+	{
+		return ideal;
+	}
 
-    public String getMotto() {
-        return motto;
-    }
+	public void setIdeal(String ideal)
+	{
+		this.ideal = ideal;
+	}
 
-    public void setMotto(String motto) {
-        this.motto = motto;
-    }
+	public String getMotto()
+	{
+		return motto;
+	}
 
-    public Long getElectionSignId() {
-        return electionSignId;
-    }
+	public void setMotto(String motto)
+	{
+		this.motto = motto;
+	}
 
-    public void setElectionSignId(Long imageId) {
-        this.electionSignId = imageId;
-    }
+	public Long getElectionSignId()
+	{
+		return electionSignId;
+	}
 
-    public Long getPartyId() {
-        return partyId;
-    }
+	public void setElectionSignId(Long imageId)
+	{
+		this.electionSignId = imageId;
+	}
 
-    public void setPartyId(Long politicalPartyId) {
-        this.partyId = politicalPartyId;
-    }
+	public Long getPartyId()
+	{
+		return partyId;
+	}
 
-    public Long getBioId() {
-        return bioId;
-    }
+	public void setPartyId(Long politicalPartyId)
+	{
+		this.partyId = politicalPartyId;
+	}
 
-    public void setBioId(Long bioId) {
-        this.bioId = bioId;
-    }
+	public Long getBioId()
+	{
+		return bioId;
+	}
 
-    public Long getPoliticalPartyId() {
-        return politicalPartyId;
-    }
+	public void setBioId(Long bioId)
+	{
+		this.bioId = bioId;
+	}
 
-    public void setPoliticalPartyId(Long politicalPartyId) {
-        this.politicalPartyId = politicalPartyId;
-    }
+	public Long getPoliticalPartyId()
+	{
+		return politicalPartyId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setPoliticalPartyId(Long politicalPartyId)
+	{
+		this.politicalPartyId = politicalPartyId;
+	}
 
-        MinisterDTO ministerDTO = (MinisterDTO) o;
-        if(ministerDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), ministerDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		MinisterDTO ministerDTO = (MinisterDTO) o;
+		if (ministerDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), ministerDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "MinisterDTO{" +
-            "id=" + getId() +
-            ", personalBackground='" + getPersonalBackground() + "'" +
-            ", familyBackground='" + getFamilyBackground() + "'" +
-            ", interests='" + getInterests() + "'" +
-            ", ideal='" + getIdeal() + "'" +
-            ", motto='" + getMotto() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "MinisterDTO{" + "id=" + getId() + ", personalBackground='" + getPersonalBackground() + "'"
+				+ ", familyBackground='" + getFamilyBackground() + "'" + ", interests='" + getInterests() + "'"
+				+ ", ideal='" + getIdeal() + "'" + ", motto='" + getMotto() + "'" + "}";
+	}
 }

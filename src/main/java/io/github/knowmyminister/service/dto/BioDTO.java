@@ -1,198 +1,224 @@
 package io.github.knowmyminister.service.dto;
 
-
-import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * A DTO for the Bio entity.
  */
-public class BioDTO implements Serializable {
+public class BioDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = -5675739357779992313L;
 
-    @NotNull
-    private String firstName;
+	private Long id;
 
-    @NotNull
-    private String lastName;
+	@NotNull
+	private String firstName;
 
-    private String middleName;
+	@NotNull
+	private String lastName;
 
-    private String mobileNo;
+	private String middleName;
 
-    private String email;
+	private String mobileNo;
 
-    @NotNull
-    private String born;
+	private String email;
 
-    @NotNull
-    private Integer age;
+	@NotNull
+	private String born;
 
-    @NotNull
-    private Integer sex;
+	@NotNull
+	private Integer age;
 
-    private String spouse;
+	@NotNull
+	private Integer sex;
 
-    private String children;
+	private String spouse;
 
-    private String website;
+	private String children;
 
-    private Long languageId;
+	private String website;
 
-    private Long profilePictureId;
+	private Long languageId;
 
-    public Long getId() {
-        return id;
-    }
+	private Long profilePictureId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getFirstName()
+	{
+		return firstName;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public void setFirstName(String firstName)
+	{
+		this.firstName = firstName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public String getLastName()
+	{
+		return lastName;
+	}
 
-    public String getMiddleName() {
-        return middleName;
-    }
+	public void setLastName(String lastName)
+	{
+		this.lastName = lastName;
+	}
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
+	public String getMiddleName()
+	{
+		return middleName;
+	}
 
-    public String getMobileNo() {
-        return mobileNo;
-    }
+	public void setMiddleName(String middleName)
+	{
+		this.middleName = middleName;
+	}
 
-    public void setMobileNo(String mobileNo) {
-        this.mobileNo = mobileNo;
-    }
+	public String getMobileNo()
+	{
+		return mobileNo;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setMobileNo(String mobileNo)
+	{
+		this.mobileNo = mobileNo;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getEmail()
+	{
+		return email;
+	}
 
-    public String getBorn() {
-        return born;
-    }
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
 
-    public void setBorn(String born) {
-        this.born = born;
-    }
+	public String getBorn()
+	{
+		return born;
+	}
 
-    public Integer getAge() {
-        return age;
-    }
+	public void setBorn(String born)
+	{
+		this.born = born;
+	}
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+	public Integer getAge()
+	{
+		return age;
+	}
 
-    public Integer getSex() {
-        return sex;
-    }
+	public void setAge(Integer age)
+	{
+		this.age = age;
+	}
 
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
+	public Integer getSex()
+	{
+		return sex;
+	}
 
-    public String getSpouse() {
-        return spouse;
-    }
+	public void setSex(Integer sex)
+	{
+		this.sex = sex;
+	}
 
-    public void setSpouse(String spouse) {
-        this.spouse = spouse;
-    }
+	public String getSpouse()
+	{
+		return spouse;
+	}
 
-    public String getChildren() {
-        return children;
-    }
+	public void setSpouse(String spouse)
+	{
+		this.spouse = spouse;
+	}
 
-    public void setChildren(String children) {
-        this.children = children;
-    }
+	public String getChildren()
+	{
+		return children;
+	}
 
-    public String getWebsite() {
-        return website;
-    }
+	public void setChildren(String children)
+	{
+		this.children = children;
+	}
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
+	public String getWebsite()
+	{
+		return website;
+	}
 
-    public Long getLanguageId() {
-        return languageId;
-    }
+	public void setWebsite(String website)
+	{
+		this.website = website;
+	}
 
-    public void setLanguageId(Long languageId) {
-        this.languageId = languageId;
-    }
+	public Long getLanguageId()
+	{
+		return languageId;
+	}
 
-    public Long getProfilePictureId() {
-        return profilePictureId;
-    }
+	public void setLanguageId(Long languageId)
+	{
+		this.languageId = languageId;
+	}
 
-    public void setProfilePictureId(Long imageId) {
-        this.profilePictureId = imageId;
-    }
+	public Long getProfilePictureId()
+	{
+		return profilePictureId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setProfilePictureId(Long imageId)
+	{
+		this.profilePictureId = imageId;
+	}
 
-        BioDTO bioDTO = (BioDTO) o;
-        if(bioDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), bioDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		BioDTO bioDTO = (BioDTO) o;
+		if (bioDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), bioDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "BioDTO{" +
-            "id=" + getId() +
-            ", firstName='" + getFirstName() + "'" +
-            ", lastName='" + getLastName() + "'" +
-            ", middleName='" + getMiddleName() + "'" +
-            ", mobileNo='" + getMobileNo() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", born='" + getBorn() + "'" +
-            ", age=" + getAge() +
-            ", sex=" + getSex() +
-            ", spouse='" + getSpouse() + "'" +
-            ", children='" + getChildren() + "'" +
-            ", website='" + getWebsite() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "BioDTO{" + "id=" + getId() + ", firstName='" + getFirstName() + "'" + ", lastName='" + getLastName()
+				+ "'" + ", middleName='" + getMiddleName() + "'" + ", mobileNo='" + getMobileNo() + "'" + ", email='"
+				+ getEmail() + "'" + ", born='" + getBorn() + "'" + ", age=" + getAge() + ", sex=" + getSex()
+				+ ", spouse='" + getSpouse() + "'" + ", children='" + getChildren() + "'" + ", website='" + getWebsite()
+				+ "'" + "}";
+	}
 }

@@ -1,116 +1,131 @@
 package io.github.knowmyminister.service.dto;
 
-
-import java.time.Instant;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Instant;
 import java.util.Objects;
 
 /**
  * A DTO for the Education entity.
  */
-public class EducationDTO implements Serializable {
+public class EducationDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = 5912322597731360558L;
 
-    private String title;
+	private Long id;
 
-    private String institute;
+	private String title;
 
-    private Instant startDate;
+	private String institute;
 
-    private Instant endDate;
+	private Instant startDate;
 
-    private Long ministerId;
+	private Instant endDate;
 
-    private Long languageId;
+	private Long ministerId;
 
-    public Long getId() {
-        return id;
-    }
+	private Long languageId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public String getTitle()
+	{
+		return title;
+	}
 
-    public String getInstitute() {
-        return institute;
-    }
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
 
-    public void setInstitute(String institute) {
-        this.institute = institute;
-    }
+	public String getInstitute()
+	{
+		return institute;
+	}
 
-    public Instant getStartDate() {
-        return startDate;
-    }
+	public void setInstitute(String institute)
+	{
+		this.institute = institute;
+	}
 
-    public void setStartDate(Instant startDate) {
-        this.startDate = startDate;
-    }
+	public Instant getStartDate()
+	{
+		return startDate;
+	}
 
-    public Instant getEndDate() {
-        return endDate;
-    }
+	public void setStartDate(Instant startDate)
+	{
+		this.startDate = startDate;
+	}
 
-    public void setEndDate(Instant endDate) {
-        this.endDate = endDate;
-    }
+	public Instant getEndDate()
+	{
+		return endDate;
+	}
 
-    public Long getMinisterId() {
-        return ministerId;
-    }
+	public void setEndDate(Instant endDate)
+	{
+		this.endDate = endDate;
+	}
 
-    public void setMinisterId(Long ministerId) {
-        this.ministerId = ministerId;
-    }
+	public Long getMinisterId()
+	{
+		return ministerId;
+	}
 
-    public Long getLanguageId() {
-        return languageId;
-    }
+	public void setMinisterId(Long ministerId)
+	{
+		this.ministerId = ministerId;
+	}
 
-    public void setLanguageId(Long languageId) {
-        this.languageId = languageId;
-    }
+	public Long getLanguageId()
+	{
+		return languageId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setLanguageId(Long languageId)
+	{
+		this.languageId = languageId;
+	}
 
-        EducationDTO educationDTO = (EducationDTO) o;
-        if(educationDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), educationDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		EducationDTO educationDTO = (EducationDTO) o;
+		if (educationDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), educationDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "EducationDTO{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", institute='" + getInstitute() + "'" +
-            ", startDate='" + getStartDate() + "'" +
-            ", endDate='" + getEndDate() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "EducationDTO{" + "id=" + getId() + ", title='" + getTitle() + "'" + ", institute='" + getInstitute()
+				+ "'" + ", startDate='" + getStartDate() + "'" + ", endDate='" + getEndDate() + "'" + "}";
+	}
 }

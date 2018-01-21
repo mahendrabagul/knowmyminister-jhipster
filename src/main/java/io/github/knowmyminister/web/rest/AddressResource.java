@@ -1,25 +1,32 @@
 package io.github.knowmyminister.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
-import io.github.knowmyminister.service.AddressService;
-import io.github.knowmyminister.web.rest.errors.BadRequestAlertException;
-import io.github.knowmyminister.web.rest.util.HeaderUtil;
-import io.github.knowmyminister.service.dto.AddressDTO;
-import io.github.jhipster.web.util.ResponseUtil;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
+import com.codahale.metrics.annotation.Timed;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import io.github.jhipster.web.util.ResponseUtil;
+import io.github.knowmyminister.service.AddressService;
+import io.github.knowmyminister.service.dto.AddressDTO;
+import io.github.knowmyminister.web.rest.errors.BadRequestAlertException;
+import io.github.knowmyminister.web.rest.util.HeaderUtil;
 
 /**
  * REST controller for managing Address.

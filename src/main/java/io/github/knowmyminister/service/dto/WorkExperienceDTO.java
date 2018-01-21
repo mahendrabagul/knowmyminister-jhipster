@@ -1,120 +1,137 @@
 package io.github.knowmyminister.service.dto;
 
-
-import java.time.Instant;
-import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Instant;
 import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * A DTO for the WorkExperience entity.
  */
-public class WorkExperienceDTO implements Serializable {
+public class WorkExperienceDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = -116448968280348958L;
 
-    @NotNull
-    private String organization;
+	private Long id;
 
-    private String description;
+	@NotNull
+	private String organization;
 
-    @NotNull
-    private Instant startDate;
+	private String description;
 
-    @NotNull
-    private Instant endDate;
+	@NotNull
+	private Instant startDate;
 
-    private Long ministerId;
+	@NotNull
+	private Instant endDate;
 
-    private Long languageId;
+	private Long ministerId;
 
-    public Long getId() {
-        return id;
-    }
+	private Long languageId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getOrganization() {
-        return organization;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
+	public String getOrganization()
+	{
+		return organization;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setOrganization(String organization)
+	{
+		this.organization = organization;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getDescription()
+	{
+		return description;
+	}
 
-    public Instant getStartDate() {
-        return startDate;
-    }
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 
-    public void setStartDate(Instant startDate) {
-        this.startDate = startDate;
-    }
+	public Instant getStartDate()
+	{
+		return startDate;
+	}
 
-    public Instant getEndDate() {
-        return endDate;
-    }
+	public void setStartDate(Instant startDate)
+	{
+		this.startDate = startDate;
+	}
 
-    public void setEndDate(Instant endDate) {
-        this.endDate = endDate;
-    }
+	public Instant getEndDate()
+	{
+		return endDate;
+	}
 
-    public Long getMinisterId() {
-        return ministerId;
-    }
+	public void setEndDate(Instant endDate)
+	{
+		this.endDate = endDate;
+	}
 
-    public void setMinisterId(Long ministerId) {
-        this.ministerId = ministerId;
-    }
+	public Long getMinisterId()
+	{
+		return ministerId;
+	}
 
-    public Long getLanguageId() {
-        return languageId;
-    }
+	public void setMinisterId(Long ministerId)
+	{
+		this.ministerId = ministerId;
+	}
 
-    public void setLanguageId(Long languageId) {
-        this.languageId = languageId;
-    }
+	public Long getLanguageId()
+	{
+		return languageId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setLanguageId(Long languageId)
+	{
+		this.languageId = languageId;
+	}
 
-        WorkExperienceDTO workExperienceDTO = (WorkExperienceDTO) o;
-        if(workExperienceDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), workExperienceDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		WorkExperienceDTO workExperienceDTO = (WorkExperienceDTO) o;
+		if (workExperienceDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), workExperienceDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "WorkExperienceDTO{" +
-            "id=" + getId() +
-            ", organization='" + getOrganization() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", startDate='" + getStartDate() + "'" +
-            ", endDate='" + getEndDate() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "WorkExperienceDTO{" + "id=" + getId() + ", organization='" + getOrganization() + "'" + ", description='"
+				+ getDescription() + "'" + ", startDate='" + getStartDate() + "'" + ", endDate='" + getEndDate() + "'"
+				+ "}";
+	}
 }

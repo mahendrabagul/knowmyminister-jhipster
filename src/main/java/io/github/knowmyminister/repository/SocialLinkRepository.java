@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.*;
 /**
  * Spring Data JPA repository for the SocialLink entity.
  */
-@SuppressWarnings("unused")
 @Repository
 public interface SocialLinkRepository extends JpaRepository<SocialLink, Long> {
 

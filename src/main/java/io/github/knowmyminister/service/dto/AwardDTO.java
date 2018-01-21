@@ -1,110 +1,124 @@
 package io.github.knowmyminister.service.dto;
 
-
-import java.time.Instant;
-import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Instant;
 import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * A DTO for the Award entity.
  */
-public class AwardDTO implements Serializable {
+public class AwardDTO implements Serializable
+{
 
-    private Long id;
+	private static final long serialVersionUID = 4805604857035492892L;
 
-    @NotNull
-    private String title;
+	private Long id;
 
-    @NotNull
-    private Instant startDate;
+	@NotNull
+	private String title;
 
-    @NotNull
-    private String issuer;
+	@NotNull
+	private Instant startDate;
 
-    private String description;
+	@NotNull
+	private String issuer;
 
-    private Long ministerId;
+	private String description;
 
-    public Long getId() {
-        return id;
-    }
+	private Long ministerId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public String getTitle()
+	{
+		return title;
+	}
 
-    public Instant getStartDate() {
-        return startDate;
-    }
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
 
-    public void setStartDate(Instant startDate) {
-        this.startDate = startDate;
-    }
+	public Instant getStartDate()
+	{
+		return startDate;
+	}
 
-    public String getIssuer() {
-        return issuer;
-    }
+	public void setStartDate(Instant startDate)
+	{
+		this.startDate = startDate;
+	}
 
-    public void setIssuer(String issuer) {
-        this.issuer = issuer;
-    }
+	public String getIssuer()
+	{
+		return issuer;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setIssuer(String issuer)
+	{
+		this.issuer = issuer;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getDescription()
+	{
+		return description;
+	}
 
-    public Long getMinisterId() {
-        return ministerId;
-    }
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 
-    public void setMinisterId(Long ministerId) {
-        this.ministerId = ministerId;
-    }
+	public Long getMinisterId()
+	{
+		return ministerId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+	public void setMinisterId(Long ministerId)
+	{
+		this.ministerId = ministerId;
+	}
 
-        AwardDTO awardDTO = (AwardDTO) o;
-        if(awardDTO.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), awardDTO.getId());
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+		AwardDTO awardDTO = (AwardDTO) o;
+		if (awardDTO.getId() == null || getId() == null)
+		{
+			return false;
+		}
+		return Objects.equals(getId(), awardDTO.getId());
+	}
 
-    @Override
-    public String toString() {
-        return "AwardDTO{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            ", startDate='" + getStartDate() + "'" +
-            ", issuer='" + getIssuer() + "'" +
-            ", description='" + getDescription() + "'" +
-            "}";
-    }
+	@Override
+	public int hashCode()
+	{
+		return Objects.hashCode(getId());
+	}
+
+	@Override
+	public String toString()
+	{
+		return "AwardDTO{" + "id=" + getId() + ", title='" + getTitle() + "'" + ", startDate='" + getStartDate() + "'"
+				+ ", issuer='" + getIssuer() + "'" + ", description='" + getDescription() + "'" + "}";
+	}
 }
