@@ -1,11 +1,13 @@
 <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
     <div class="jh-logo-container float-left">
-        <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
+        <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
             <i class="fa fa-bars"></i>
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
             <span class="logo-img"></span>
-            <span jhiTranslate="global.title" class="navbar-title">KnowMyMinister</span> <span class="navbar-version">{{version}}</span>
+            <span jhiTranslate="global.title" class="navbar-title">KnowMyMinister</span>
+            <span class="navbar-version">{{version}}</span>
         </a>
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
@@ -30,79 +32,92 @@
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
                     <li>
-                        <a class="dropdown-item" routerLink="minister-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="minister-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.ministerKnowmyminister">Minister Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="award-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="award-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.awardKnowmyminister">Award Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="image-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="image-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.imageKnowmyminister">Image Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="photo-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="photo-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.photoKnowmyminister">Photo Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="political-party-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="political-party-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.politicalPartyKnowmyminister">Political Party Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="social-link-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="social-link-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.socialLinkKnowmyminister">Social Link Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="address-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="address-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.addressKnowmyminister">Address Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="bio-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="bio-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.bioKnowmyminister">Bio Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="work-experience-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="work-experience-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.workExperienceKnowmyminister">Work Experience Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="education-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="education-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.educationKnowmyminister">Education Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="language-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="language-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.languageKnowmyminister">Language Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="country-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="country-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.countryKnowmyminister">Country Knowmyminister</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" routerLink="state-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <a class="dropdown-item" routerLink="state-knowmyminister" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.stateKnowmyminister">State Knowmyminister</span>
                         </a>
@@ -184,15 +199,15 @@
             </li>
             <li ngbDropdown class="nav-item dropdown pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">
-                  <span *ngIf="!getImageUrl()">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span jhiTranslate="global.menu.account.main">
-                      Account
+                    <span *ngIf="!getImageUrl()">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span jhiTranslate="global.menu.account.main">
+                            Account
+                        </span>
                     </span>
-                  </span>
-                  <span *ngIf="getImageUrl()">
-                      <img [src]="getImageUrl()" class="profile-image img-circle" alt="Avatar">
-                  </span>
+                    <span *ngIf="getImageUrl()">
+                        <img [src]="getImageUrl()" class="profile-image img-circle" alt="Avatar">
+                    </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
                     <li *ngSwitchCase="true">
@@ -219,6 +234,7 @@
                             <span jhiTranslate="global.menu.account.login">Sign in</span>
                         </a>
                     </li>
+                    <!-- Hide from from page to avoid logins -->
                     <!-- <li *ngSwitchCase="false">
                         <a class="dropdown-item" routerLink="register" routerLinkActive="active" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-user-plus" aria-hidden="true"></i>
