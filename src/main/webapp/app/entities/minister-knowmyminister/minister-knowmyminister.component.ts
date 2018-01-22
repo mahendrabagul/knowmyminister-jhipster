@@ -13,7 +13,7 @@ import { ITEMS_PER_PAGE, Principal, ResponseWrapper } from '../../shared';
 })
 export class MinisterKnowmyministerComponent implements OnInit, OnDestroy {
 
-currentAccount: any;
+    currentAccount: any;
     ministers: MinisterKnowmyminister[];
     error: any;
     success: any;
@@ -55,19 +55,21 @@ currentAccount: any;
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
-                sort: this.sort()}).subscribe(
-                    (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
-                    (res: ResponseWrapper) => this.onError(res.json)
+                sort: this.sort()
+            }).subscribe(
+                (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
+                (res: ResponseWrapper) => this.onError(res.json)
                 );
             return;
         }
         this.ministerService.query({
             page: this.page - 1,
             size: this.itemsPerPage,
-            sort: this.sort()}).subscribe(
+            sort: this.sort()
+        }).subscribe(
             (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
             (res: ResponseWrapper) => this.onError(res.json)
-        );
+            );
     }
     loadPage(page: number) {
         if (page !== this.previousPage) {
@@ -76,13 +78,14 @@ currentAccount: any;
         }
     }
     transition() {
-        this.router.navigate(['/minister-knowmyminister'], {queryParams:
-            {
-                page: this.page,
-                size: this.itemsPerPage,
-                search: this.currentSearch,
-                sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
-            }
+        this.router.navigate(['/minister-knowmyminister'], {
+            queryParams:
+                {
+                    page: this.page,
+                    size: this.itemsPerPage,
+                    search: this.currentSearch,
+                    sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
+                }
         });
         this.loadAll();
     }
